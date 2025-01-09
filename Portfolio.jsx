@@ -40,7 +40,8 @@ const projects = [
 const Portfolio = () => {
   return (
     <div className="max-w-[1200px] mx-auto p-6 md:my-20" id="portfolio">
-      <h2 className="text-3xl font-bold text-gray-200 mb-8">Projects</h2>
+      <h4 className="text-lg text-purple-400 mb-2 tracking-wide">ALEKSI'S WORK</h4>
+      <h2 className="text-6xl font-bold text-gray-200 mb-8">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-y-12 auto-rows-auto">
         {projects.map((project, index) => (
           <motion.div
