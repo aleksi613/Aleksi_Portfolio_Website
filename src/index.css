@@ -31,3 +31,7 @@ span {
 .bg-primary-color {
     @apply bg-purple-600
 }
+
+.active {
+  border-bottom: 2px solid #6b46c1; 
+}
