@@ -12,7 +12,7 @@ const projects = [
       "A Java-based real-time chat server featuring multi-client support, chat rooms, and persistent chat history with SQLite. Integrated with OpenAI's GPT API, the AI enhances user experience by assisting with program navigation, resolving issues, and executing tailored commands based on natural language requests, like creating chat rooms or retrieving chat history. The GUI includes a private sidebar for personal AI interactions and an option for public AI responses. Features include dual chat areas, theme toggling, user status displays, and commands for managing chat rooms and forwarding AI responses. Built with Maven using technologies like OkHttp and Gson for seamless API integration.",
     tags: ["#Java", "#SocketProgramming", "#Concurrency", "#SQLite", "#AI", "#API", "#GUI", "#Swing", "#Maven", "#DataStructures"],
     links: {
-      github: "#",
+      github: "https://github.com/aleksi613/Java-ChatSphere",
     },
   },
   {
@@ -22,7 +22,7 @@ const projects = [
       "A terminal-based system in C designed to manage gym members, equipment, and generate detailed reports. It features dynamic memory allocation for scalability, file handling for persistent data storage, and custom data structures to streamline member and equipment management. Key functionalities include adding, updating, deleting, and searching members; tracking equipment statuses with repair ETAs; and generating real-time reports on operational and broken equipment.",
     tags: ["#C", "#DynamicMemoryAllocation", "#FileHandling", "#DataStructures", "#Pointers"],
     links: {
-      github: "#",
+      github: "https://github.com/aleksi613/gym-management-system",
     },
   },
   {
@@ -32,7 +32,7 @@ const projects = [
       "A Python-based Weather Forecasting App that retrieves real-time weather data from the OpenWeatherMap API for any city or the user's current location using IP-based geolocation via the IPInfo API. The app supports functionality to compare weather conditions (temperature, humidity, wind speed, pressure) between two cities or between Metric (°C, m/s) and Imperial (°F, mph) units. It includes robust error handling to manage invalid inputs, API issues, and connectivity errors, ensuring a seamless user experience. Features include fetching weather by city name or current location, comparing weather data, and toggling between units.",
     tags: ["#Python", "#API", "#ErrorHandling", "#JSON"],
     links: {
-      github: "#",
+      github: "https://github.com/aleksi613/weather-forecast-app",
     },
   },
 ];
