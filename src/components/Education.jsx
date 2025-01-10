@@ -27,7 +27,7 @@ const Education = () => {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold tracking-wide mb-4">Education</h2>
+          <h2 className="text-5xl font-bold tracking-wide mb-4">Education</h2>
           <p className="text-lg mb-2">
             Bachelor of Computer Science, Specialization in Software Engineering
           </p>

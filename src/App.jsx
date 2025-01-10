@@ -5,8 +5,9 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Overview from "./components/Overview";
 import Portfolio from "./components/Portfolio";
-import Skills from "./components/Skills";
+import Skills from "./components/Tech";
 import Education from "./components/Education";
+import Tech from "./components/Tech";
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
       <Hero/>
       <Overview/>
       <Education/>
-      <Skills/>
+      <Tech/>
       <Portfolio/>
       {/* <Experience/> */}
       <Contact/>

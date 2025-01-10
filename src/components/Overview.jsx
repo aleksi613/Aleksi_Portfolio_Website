@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Tilt } from "react-tilt";
 import iconPS from "../assets/metalPS.png";
 import iconBE from "../assets/metalBE.png";
 import iconSphere from "../assets/metalSphere.png";
@@ -100,24 +101,24 @@ const Overview = () => {
           className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-10"
         >
           {cards.map((card, index) => (
-            <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2, duration: 0.5 }}
-            whileHover={{
-              y: -5,
-              boxShadow: "0 0 30px rgba(128, 90, 213, 0.7)", // Glow effect
-              transition: { duration: 0.2 },
-            }}
-            className="relative bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-[1px] rounded-lg shadow-lg transition-transform transform hover:scale-105"
-          >
-            <div className="bg-gray-900 rounded-lg py-8 px-6 flex flex-col items-center">
-              <div className="text-5xl mb-4">{card.icon}</div>
-              <h3 className="text-2xl font-semibold">{card.title}</h3>
-            </div>
-          </motion.div>
-          
+            <Tilt key={index} options={{ max: 25, scale: 1.05 }}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2, duration: 0.5 }}
+                whileHover={{
+                  y: -5,
+                  boxShadow: "0 0 30px rgba(128, 90, 213, 0.7)", // Glow effect
+                  transition: { duration: 0.2 },
+                }}
+                className="relative bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-[1px] rounded-lg shadow-lg transition-transform transform hover:scale-105"
+              >
+                <div className="bg-gray-900 rounded-lg py-8 px-6 flex flex-col items-center">
+                  <div className="text-5xl mb-4">{card.icon}</div>
+                  <h3 className="text-2xl font-semibold">{card.title}</h3>
+                </div>
+              </motion.div>
+            </Tilt>
           ))}
         </motion.div>
       </div>
