@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import iconPS from "../assets/metalPS.png";
 import iconBE from "../assets/metalBE.png";
 import iconSphere from "../assets/metalSphere.png";
