@@ -6,20 +6,20 @@
 body {
   font-family: "Space Grotesk", sans-serif;
   background-color: #190b1f;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 h2 {
-  @apply text-xl md:text-4xl
+  @apply text-xl md:text-4xl;
 }
 
 p {
-  @apply text-xl tracking-tight leading-relaxed
+  @apply text-xl tracking-tight leading-relaxed;
 }
 
 span {
-  @apply text-purple-600
+  @apply text-purple-600;
 }
-
 
 .shiny-effect {
   position: absolute;
@@ -29,7 +29,7 @@ span {
 }
 
 .bg-primary-color {
-    @apply bg-purple-600
+  @apply bg-purple-600;
 }
 
 .active {

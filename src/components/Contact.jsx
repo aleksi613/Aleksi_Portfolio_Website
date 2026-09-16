@@ -6,8 +6,10 @@ import EarthCanvas from "./canvas/Earth";
 import StarsCanvas from "./canvas/Stars";
 import { FaPaperPlane } from "react-icons/fa";
 import { slideIn } from "../utils/motion";
+import useReducedGraphics from "../utils/useReducedGraphics";
 
 const Contact = () => {
+  const reducedGraphics = useReducedGraphics();
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -56,19 +58,21 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-purple-1000 text-white" id="contact">
+    <div className="relative w-full min-h-screen md:h-screen bg-purple-1000 text-white" id="contact">
       {/* Stars Background */}
-      <div className="absolute inset-0 z-[-1]">
-        <StarsCanvas />
-      </div>
+      {!reducedGraphics && (
+        <div className="absolute inset-0 z-[-1]">
+          <StarsCanvas />
+        </div>
+      )}
 
       {/* Contact Form Section */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-center items-center h-full gap-10 px-4 md:px-10">
+      <div className="relative z-10 flex min-h-screen flex-col md:flex-row justify-center items-center md:h-full gap-10 px-4 py-20 md:px-10 md:py-0">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-gray-900 p-6 rounded-lg shadow-lg w-full md:w-[45%] ml-10"
+          className="bg-gray-900 p-6 rounded-lg shadow-lg w-full md:w-[45%] md:ml-10"
         >
           <div className="text-white">
             {/* "Get in touch" small heading */}
@@ -142,17 +146,19 @@ const Contact = () => {
         </motion.div>
 
         {/* RIGHT COLUMN: Earth Canvas */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="w-full md:w-[55%] flex items-center justify-center p-4 md:p-8"
-        >
-          {/* The EarthCanvas component might need a bigger scale or adjusted camera. */}
-          <div className="w-full h-[400px] md:h-[600px]">
-            <EarthCanvas />
-          </div>
-        </motion.div>
+        {!reducedGraphics && (
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full md:w-[55%] flex items-center justify-center p-4 md:p-8"
+          >
+            {/* The EarthCanvas component might need a bigger scale or adjusted camera. */}
+            <div className="w-full h-[400px] md:h-[600px]">
+              <EarthCanvas />
+            </div>
+          </motion.div>
+        )}
       </div>
     </div>
   );

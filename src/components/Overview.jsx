@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import iconPS from "../assets/metalPS.png";
 import iconBE from "../assets/metalBE.png";
 import iconSphere from "../assets/metalSphere.png";
@@ -14,6 +14,8 @@ const Overview = () => {
         <img
           src={iconSphere}
           alt="Metal Icon"
+          loading="lazy"
+          decoding="async"
           className="w-16 h-16 mx-auto"
         />
       ),
@@ -24,6 +26,8 @@ const Overview = () => {
         <img
           src={iconPS}
           alt="Metal Icon"
+          loading="lazy"
+          decoding="async"
           className="w-16 h-16 mx-auto"
         />
       ),
@@ -34,6 +38,8 @@ const Overview = () => {
         <img
           src={iconFS}
           alt="Metal Icon"
+          loading="lazy"
+          decoding="async"
           className="w-16 h-16 mx-auto"
         />
       ),
@@ -44,6 +50,8 @@ const Overview = () => {
         <img
           src={iconBE}
           alt="Metal Icon"
+          loading="lazy"
+          decoding="async"
           className="w-16 h-16 mx-auto"
         />
       ),
@@ -52,11 +60,11 @@ const Overview = () => {
 
   return (
     <div
-      className="relative w-full h-screen bg-purple-1000 text-white"
+      className="relative w-full min-h-screen md:h-screen bg-purple-1000 text-white"
       id="overview"
     >
       {/* Section Header */}
-      <div className="flex flex-col justify-center items-center h-full px-10 text-center">
+      <div className="flex min-h-screen flex-col justify-center items-center px-4 py-20 text-center md:h-full md:min-h-0 md:px-10 md:py-0">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,7 +78,7 @@ const Overview = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-6xl font-bold mb-6"
+          className="text-4xl md:text-6xl font-bold mb-6"
         >
           Overview
         </motion.h1>

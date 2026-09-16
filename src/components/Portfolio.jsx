@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt"; 
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 import project3 from "../assets/project3.png";
@@ -8,7 +8,7 @@ import project3 from "../assets/project3.png";
 const projects = [
   {
     img: project1,
-    title: "Chatsphere AI Project",
+    title: "AI Enhanced ChatSphere",
     description:
       "A Java-based real-time chat server featuring multi-client support, chat rooms, and persistent chat history with SQLite. Integrated with OpenAI's GPT API, the AI enhances user experience by assisting with program navigation, resolving issues, and executing tailored commands based on natural language requests, like creating chat rooms or retrieving chat history. The GUI includes a private sidebar for personal AI interactions and an option for public AI responses. Features include dual chat areas, theme toggling, user status displays, and commands for managing chat rooms and forwarding AI responses. Built with Maven using technologies like OkHttp and Gson for seamless API integration.",
     tags: ["#Java", "#SocketProgramming", "#Concurrency", "#SQLite", "#AI", "#API", "#GUI", "#Swing", "#Maven", "#DataStructures"],

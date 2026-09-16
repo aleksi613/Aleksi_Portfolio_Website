@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// React Icons for a polished look
+import Tilt from "react-parallax-tilt"; 
 import {
   FaDesktop,
   FaBook,

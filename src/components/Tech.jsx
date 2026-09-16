@@ -2,8 +2,11 @@ import React from "react";
 import { BallCanvas } from "./canvas/BallCanvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
+import useReducedGraphics from "../utils/useReducedGraphics";
 
 const Tech = () => {
+  const reducedGraphics = useReducedGraphics();
+
   return (
     <div
       className="
@@ -30,10 +33,20 @@ const Tech = () => {
               hover:scale-105 
             "
           >
-            <BallCanvas 
-              icon={technology.icon} 
-              technologyName={technology.name} 
-            />
+            {reducedGraphics ? (
+              <div className="flex h-full w-full items-center justify-center rounded-full bg-purple-600 shadow-lg">
+                <img
+                  src={technology.icon}
+                  alt={technology.name}
+                  className="h-12 w-12 object-contain sm:h-16 sm:w-16"
+                />
+              </div>
+            ) : (
+              <BallCanvas
+                icon={technology.icon}
+                technologyName={technology.name}
+              />
+            )}
           </div>
         ))}
       </div>

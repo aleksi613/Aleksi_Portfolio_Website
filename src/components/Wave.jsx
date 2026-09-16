@@ -5,7 +5,7 @@ import { OrbitControls, useGLTF, useAnimations, Preload } from "@react-three/dre
 import * as THREE from "three";
 
 function Model() {
-  const { scene, animations } = useGLTF("/models/scene.gltf");
+  const { scene, animations } = useGLTF("/assets/models/wave/scene.gltf");
   const { actions } = useAnimations(animations, scene);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function WaveCanvas() {
         style={{ width: "170%", height: "100%", background: "transparent" }}
         onCreated={(state) => {
           state.scene.background = null; 
-          state.gl.outputEncoding = THREE.sRGBEncoding;
+          state.gl.outputColorSpace = THREE.SRGBColorSpace;
         }}
       >
         <Suspense fallback={null}>

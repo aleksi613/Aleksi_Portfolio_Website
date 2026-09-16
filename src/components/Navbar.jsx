@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-import logo from "../assets/InitialsLogo.png";
+// import logo from "../assets/InitialsLogo.png";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -34,13 +34,12 @@ const Navbar = () => {
 
   return (
     <div className='fixed top-0 left-0 w-full bg-opacity-70 backdrop-blur-md z-50'>
-      <div className='max-w-[1950px] mx-auto flex justify-between text-gray-200 text-xl items-center pl-0 pr-4 md:pl-0 md:pr-12 h-20'>
-        <a href="#" className='flex items-center'>
-          <img src={logo} alt="Logo" className='h-12 w-12 mr-2' />
-          <span className='text-2xl md:text-2xl font-bold'>Aleksi Valioghli | Software Engineer</span>
+      <div className='relative max-w-[1950px] mx-auto flex justify-between text-gray-200 text-xl items-center px-4 md:px-12 h-20'>
+        <a href="#" className='flex min-w-0 items-center'>
+          <span className='truncate text-base md:text-2xl font-bold'>Aleksi Valioghli | Software Engineer</span>
         </a>
 
-        <ul className='hidden md:flex gap-12 z-10 cursor-pointer'>
+        <ul className='hidden md:flex gap-6 lg:gap-12 z-10 cursor-pointer'>
           <li><Link to="overview" smooth={true} offset={-70} duration={500} activeClass="active">About</Link></li>
           <li><Link to="education" smooth={true} offset={-70} duration={500} activeClass="active">Education</Link></li>
           <li><Link to="skills" smooth={true} offset={-70} duration={500} activeClass="active">Skills</Link></li>
@@ -48,9 +47,14 @@ const Navbar = () => {
           <li><Link to="contact" smooth={true} offset={-70} duration={500} activeClass="active">Contact</Link></li>
         </ul>
 
-        <div onClick={toggleNav} className='md:hidden z-50 text-gray-200'>
+        <button
+          type="button"
+          onClick={toggleNav}
+          aria-label={nav ? "Close navigation menu" : "Open navigation menu"}
+          className='absolute right-4 top-1/2 -translate-y-1/2 shrink-0 md:hidden z-50 text-gray-200'
+        >
           {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
-        </div>
+        </button>
 
         <motion.div
           initial={false}
