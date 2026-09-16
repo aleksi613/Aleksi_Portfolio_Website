@@ -4,7 +4,6 @@ import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
 import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
-import metalSphere from "../assets/metalSphere.png";
 import useReducedGraphics from "../utils/useReducedGraphics";
 
 const Hero = () => {
@@ -86,15 +85,7 @@ const Hero = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          {reducedGraphics ? (
-            <img
-              src={metalSphere}
-              alt="Abstract metallic sphere"
-              className="h-full w-full object-contain"
-            />
-          ) : (
-            <WaveCanvas />
-          )}
+          <WaveCanvas reducedGraphics={reducedGraphics} />
         </motion.div>
       </div>
 

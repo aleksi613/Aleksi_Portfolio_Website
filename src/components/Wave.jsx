@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF, useAnimations, Preload } from "@react-three/drei";
 import * as THREE from "three";
 
-function Model() {
+function Model({ scale = 1.5 }) {
   const { scene, animations } = useGLTF("/assets/models/wave/scene.gltf");
   const { actions } = useAnimations(animations, scene);
 
@@ -14,10 +14,10 @@ function Model() {
     }
   }, [actions]);
 
-  return <primitive object={scene} scale={[1.5, 1.5, 1.5]} />;
+  return <primitive object={scene} scale={[scale, scale, scale]} />;
 }
 
-export default function WaveCanvas() {
+export default function WaveCanvas({ reducedGraphics = false }) {
   // 1) Create a ref for OrbitControls:
   const orbitRef = useRef();
 
@@ -25,21 +25,26 @@ export default function WaveCanvas() {
     <div
       style={{
         width: "100%",
-        height: "900px",
+        height: reducedGraphics ? "100%" : "900px",
         position: "relative",
         overflow: "visible",
         zIndex: 2,
       }}
     >
       <Canvas
+        dpr={reducedGraphics ? 1 : undefined}
         camera={{
           near: 0.01,
           far: 2000,
           position: [-0.8994117668328111, -2.1031879068090946, 1.2505159511349504], //got specific camera position from console.log using dev tools
           fov: 45
         }}
-        gl={{ alpha: true, antialias: true }}
-        style={{ width: "170%", height: "100%", background: "transparent" }}
+        gl={{ alpha: true, antialias: !reducedGraphics }}
+        style={{
+          width: reducedGraphics ? "100%" : "170%",
+          height: "100%",
+          background: "transparent",
+        }}
         onCreated={(state) => {
           state.scene.background = null; 
           state.gl.outputColorSpace = THREE.SRGBColorSpace;
@@ -63,7 +68,7 @@ export default function WaveCanvas() {
 
           <hemisphereLight intensity={0.4} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
-          <Model />
+          <Model scale={reducedGraphics ? 3 : 1.5} />
           <Preload all />
         </Suspense>
       </Canvas>
