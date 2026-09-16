@@ -76,7 +76,7 @@ const Hero = () => {
           className="
             relative
             w-full  
-            h-[320px]
+            h-[400px]
             md:h-[450px]
             overflow-visible
         "

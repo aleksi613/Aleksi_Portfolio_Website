@@ -68,7 +68,7 @@ export default function WaveCanvas({ reducedGraphics = false }) {
 
           <hemisphereLight intensity={0.4} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
-          <Model scale={reducedGraphics ? 3 : 1.5} />
+          <Model scale={reducedGraphics ? 1.9 : 1.5} />
           <Preload all />
         </Suspense>
       </Canvas>
